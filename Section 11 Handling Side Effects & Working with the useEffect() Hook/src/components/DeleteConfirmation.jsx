@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 
+//use useCallback when passing functions as dependencies of useEffect()
 export default function DeleteConfirmation({ onConfirm, onCancel }) {
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -9,7 +10,7 @@ export default function DeleteConfirmation({ onConfirm, onCancel }) {
     return () => {
       clearTimeout(timer);
     }
-  }, []);
+  }, [onConfirm]);
 
   return (
     <div id="delete-confirmation">
