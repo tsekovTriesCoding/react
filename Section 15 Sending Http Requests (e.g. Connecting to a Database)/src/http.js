@@ -3,8 +3,26 @@ export async function fetchAvailablePlaces() {
     const resData = await response.json();
 
     if (!response.ok) { // 200, 300...
-        throw new Error('Failed to fetch places');
+        throw new Error('Failed to fetch places.');
     }
 
     return resData.places;
+}
+
+export async function updateUserPlaces(places) {
+    const response = await fetch('http://localhost:3000/user-places', {
+        method: 'PUT',
+        body: JSON.stringify({ places }),
+        headers: {
+            'Content-type': 'application/json'
+        }
+    });
+
+    const resData = await response.json();
+
+    if (!response.ok) {
+        throw new Error('Failed to update user data.');
+    }
+
+    return resData.message;
 }
