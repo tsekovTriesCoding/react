@@ -1,7 +1,10 @@
-import { useActionState } from "react";
+import { useActionState, use } from "react";
+import { OpinionsContext } from "../store/opinions-context.jsx";
 
 export function NewOpinion() {
-  function shareOpinionAction(prevState, formData) {
+  const { addOpinion } = use(OpinionsContext);
+
+  async function shareOpinionAction(prevState, formData) {
     const title = formData.get('title');
     const body = formData.get('body');
     const userName = formData.get('userName');
@@ -31,8 +34,7 @@ export function NewOpinion() {
       };
     }
 
-    //submit to backend
-
+    await addOpinion({ title, body, userName });
     return { errors: null };
   }
 
@@ -55,7 +57,7 @@ export function NewOpinion() {
         </div>
         <p className="control">
           <label htmlFor="body">Your Opinion</label>
-          <textarea id="body" name="body" rows={5}> defaultValue={formState.enteredValues?.body}</textarea>
+          <textarea id="body" name="body" rows={5} defaultValue={formState.enteredValues?.body}></textarea>
         </p>
 
         {formState.errors && <ul className="errors">
