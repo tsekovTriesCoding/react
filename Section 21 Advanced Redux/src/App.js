@@ -25,7 +25,9 @@ function App() {
       return;
     }
 
-    dispatch(sendCartData(cart));
+    if (cart.changed) {
+      dispatch(sendCartData(cart));
+    } // send only if cart was changed by user
 
   }, [cart, dispatch]); // run this effect whenever cart state changes
 

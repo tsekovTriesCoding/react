@@ -46,7 +46,10 @@ export const sendCartData = (cart) => {
         const sendRequest = async () => {
             const response = await fetch('https://react-http-39cdb-default-rtdb.europe-west1.firebasedatabase.app/cart.json', {
                 method: 'PUT',
-                body: JSON.stringify(cart),
+                body: JSON.stringify({
+                    items: cart.items,
+                    totalQuantity: cart.totalQuantity,
+                }),
             });
 
             if (!response.ok) {
