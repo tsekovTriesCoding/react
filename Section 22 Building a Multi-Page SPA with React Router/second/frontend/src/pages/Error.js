@@ -11,6 +11,7 @@ function ErrorPage() {
 
     if (error.status === 500) {
         message = JSON.parse(error.data).message;
+        // message = error.data.message; - with the json() approach from react-router-dom, but not with version 7+...
     }
 
     if (error.status === 404) {
