@@ -4,8 +4,11 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import RootLayout from "./pages/Root.js";
 import HomePage from "./pages/Home.js";
-import EventsPage, { loader as eventsLoader } from "./pages/Events.js";
-import EventDetailPage, { loader as eventDetailLoader } from "./pages/EventDetail.js";
+import EventsPage, { loader as eventsLoader, } from "./pages/Events.js";
+import EventDetailPage, {
+  loader as eventDetailLoader,
+  action as deleteEventAction
+} from "./pages/EventDetail.js";
 import NewEventPage, { action as newEventAction } from "./pages/NewEvent.js";
 import EditEventPage from "./pages/EditEvent.js";
 import EventsRootLayout from "./pages/EventsRoot.js";
@@ -62,7 +65,8 @@ const router = createBrowserRouter([
             children: [
               {
                 index: true,
-                element: <EventDetailPage />
+                element: <EventDetailPage />,
+                action: deleteEventAction,
               },
               {
                 path: 'edit',
