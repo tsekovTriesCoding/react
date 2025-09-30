@@ -21,7 +21,7 @@ function MainNavigation() {
               to="/events"
               className={({ isActive }) => isActive ? classes.active : undefined}
             >
-              Products
+              Events
             </NavLink>
           </li>
         </ul>
