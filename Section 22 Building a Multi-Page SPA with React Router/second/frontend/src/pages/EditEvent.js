@@ -6,7 +6,7 @@ function EditEventPage() {
     const data = useRouteLoaderData('event-detail'); // this will be the data returned by the loader in App.js for the event-detail route
     const event = data.event;
 
-    return <EventForm event={event} />;
+    return <EventForm method={'patch'} event={event} />;
 
 }
 

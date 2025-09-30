@@ -9,10 +9,11 @@ import EventDetailPage, {
   loader as eventDetailLoader,
   action as deleteEventAction
 } from "./pages/EventDetail.js";
-import NewEventPage, { action as newEventAction } from "./pages/NewEvent.js";
+import NewEventPage from "./pages/NewEvent.js";
 import EditEventPage from "./pages/EditEvent.js";
 import EventsRootLayout from "./pages/EventsRoot.js";
 import ErrorPage from "./pages/Error.js";
+import { action as manipulateEventAction } from "./components/EventForm.js";
 
 // 1. Add five new (dummy) page components (content can be simple <h1> elements)
 //    - HomePage
@@ -70,14 +71,15 @@ const router = createBrowserRouter([
               },
               {
                 path: 'edit',
-                element: <EditEventPage />
+                element: <EditEventPage />,
+                action: manipulateEventAction,
               },
             ]
           },
           {
             path: 'new',
             element: <NewEventPage />,
-            action: newEventAction,
+            action: manipulateEventAction,
           },
         ]
       },
