@@ -1,4 +1,10 @@
+"use client";
+
+import { useState } from "react";
+
 export default function ClientDemo({ children }) {
+  const [count, setCount] = useState(0); // this is why to use client component!
+
   console.log('ClientDemo rendered');
   return (
     <div className='client-cmp'>
