@@ -10,7 +10,7 @@ export function useAccordionContext() {
     const ctx = useContext(AccordionContext);
 
     if (!ctx) {
-        throw new Error('Accordion-related components must be wrapped by <Accoridon>!')
+        throw new Error('Accordion-related components must be wrapped by <Accordion>!')
     }
 
     return ctx;
