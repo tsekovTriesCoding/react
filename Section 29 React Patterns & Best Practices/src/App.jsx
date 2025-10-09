@@ -1,5 +1,5 @@
 import Accrodion from "./components/Accordion/Accordion.jsx";
-import AccordionItem from "./components/Accordion/AccrodionItem.jsx";
+import AccordionItem from "./components/Accordion/AccordionItem.jsx";
 
 function App() {
   return <main>
