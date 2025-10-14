@@ -47,3 +47,12 @@ function add(a: number, b: number) {
 function printOutput(value: any) {
     console.log(value);
 }
+
+// Generics
+function insertAtBeginning<T>(array: T[], value: T) {
+    const newArray = [value, ...array];
+    return newArray;
+}
+
+const demoArray = [1, 2, 3];
+const updatedArray = insertAtBeginning(demoArray, 0); // [0, 1, 2, 3]
