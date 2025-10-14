@@ -33,3 +33,8 @@ let people: {
 // Type inference
 let course = 'React - The Complete Guide';
 // course = 1 - we will get an error!
+
+// Union types
+let courseUnion: string | number = 'React - The Complete Guide';
+courseUnion = 1;
+// here there is no error!
