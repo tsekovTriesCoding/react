@@ -37,3 +37,13 @@ let course = 'React - The Complete Guide';
 let courseUnion: string | number = 'React - The Complete Guide';
 courseUnion = 1;
 // here there is no error!
+
+// Functions & Types
+
+function add(a: number, b: number) {
+    return a + b;
+}
+
+function printOutput(value: any) {
+    console.log(value);
+}
