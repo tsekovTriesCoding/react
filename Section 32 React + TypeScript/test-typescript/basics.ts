@@ -1,10 +1,13 @@
 //Primitives
 
-let age: number = 2;
+let age: number;
+age = 2;
 
-let username: string = 'John';
+let username: string;
+username = 'John';
 
-let isInstructor: boolean = true;
+let isInstructor: boolean;
+isInstructor = true;
 
 //More complex types
 
@@ -26,3 +29,7 @@ let people: {
     name: string,
     age: number
 }[];
+
+// Type inference
+let course = 'React - The Complete Guide';
+// course = 1 - we will get an error!
